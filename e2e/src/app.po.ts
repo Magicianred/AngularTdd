@@ -1,6 +1,9 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
+  getRollButtons(): any {
+    return element.all(by.css('app-root button')).map(btn => btn.getText()) as Promise<string[]>;
+  }
   navigateTo() {
     return browser.get(browser.baseUrl) as Promise<any>;
   }
